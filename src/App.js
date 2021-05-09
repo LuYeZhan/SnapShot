@@ -8,26 +8,19 @@ import NotFound from './components/NotFound';
 
 class App extends Component {
     // Prevent page reload, clear input, set URL and push history on submit
-    handleSubmit = (e, history, searchInput) => {
-        e.preventDefault();
-        e.currentTarget.reset();
-        let url = `/${searchInput}`;
-        history.push(url);
-    };
+    // handleSubmit = (e, history, searchInput) => {
+    //     e.preventDefault();
+    //     e.currentTarget.reset();
+    //     let url = `/${searchInput}`;
+    //     history.push(url);
+    // };
 
     render() {
         return (
             <PhotoContextProvider>
                 <BrowserRouter basename='/'>
                     <div className='container'>
-                        <Route
-                            render={(props) => (
-                                <Header
-                                    handleSubmit={this.handleSubmit}
-                                    history={props.history}
-                                />
-                            )}
-                        />
+                        <Route render={() => <Header />} />
                         <Switch>
                             <Route
                                 exact
