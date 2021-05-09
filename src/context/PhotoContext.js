@@ -8,14 +8,20 @@ const PhotoContextProvider = (props) => {
     const [loading, setLoading] = useState(true);
     const [searchInput, setSearchInput] = useState('');
     const runSearch = (query) => {
+        const cachedData = sessionStorage.getItem(query);
+        if (cachedData) {
+            setImages(JSON.parse(cachedData).photos.photo);
+            setLoading(false);
+            return;
+        }
         axios
             .get(
-                `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=24&format=json&nojsoncallback=1`,
-                { headers: { 'Cache-Control': 'max-age=60' } }
+                `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=24&format=json&nojsoncallback=1`
             )
             .then((response) => {
                 setImages(response.data.photos.photo);
                 setLoading(false);
+                sessionStorage.setItem(query, JSON.stringify(response.data));
             })
             .catch((error) => {
                 console.log(
