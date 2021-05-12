@@ -6,7 +6,6 @@ const Form = ({ input, setInput }) => {
     // update search text state
     const { runSearch } = useContext(PhotoContext);
     const history = useHistory();
-
     const updateSearchInput = ({ target: { value } }) => {
         setInput(value);
     };

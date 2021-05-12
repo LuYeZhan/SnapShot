@@ -7,14 +7,6 @@ import Search from './components/Search';
 import NotFound from './components/NotFound';
 
 class App extends Component {
-    // Prevent page reload, clear input, set URL and push history on submit
-    // handleSubmit = (e, history, searchInput) => {
-    //     e.preventDefault();
-    //     e.currentTarget.reset();
-    //     let url = `/${searchInput}`;
-    //     history.push(url);
-    // };
-
     render() {
         return (
             <PhotoContextProvider>
