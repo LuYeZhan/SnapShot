@@ -4,14 +4,18 @@
   "private": true,
   "homepage": "https://Yog9.github.io/SnapShot",
   "dependencies": {
+    "@googlemaps/js-api-loader": "^1.11.4",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
+    "dotenv": "^9.0.2",
+    "google-maps-react": "^2.0.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "react-test-renderer": "^17.0.2"
   },
   "scripts": {
     "predeploy": "npm run build",
