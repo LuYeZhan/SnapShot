@@ -7,7 +7,6 @@ export const MapContainer = (props) => {
     const [visible, setVisible] = useState(false);
     const [selected, setSelected] = useState({});
     const markerRef = useRef(null);
-    console.log(selected);
 
     const onSelect = (image) => {
         setSelected(image);
